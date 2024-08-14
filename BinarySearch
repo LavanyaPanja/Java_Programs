@@ -1,0 +1,65 @@
+package corejava;
+
+import java.util.ArrayList;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Scanner;
+
+public class BinarySearch{
+public static void main(String[] args) {
+	
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the length of array");
+	int num = sc.nextInt();
+	
+	ArrayList array = new ArrayList(num);
+	
+	System.out.println("Enter the elements in array");
+	for(int i = 0; i < num; i++) {
+		array.add(sc.nextInt());
+	   }
+	array.sort(Comparator.naturalOrder());
+	
+	System.out.println("Enter the element to be searched");
+	int search = sc.nextInt();
+	
+	int mid = (array.size() - 1)/2;
+	
+	int midElement = (int) array.get(mid);
+	
+	if (midElement == search ){
+		System.out.println("The search element is found at position" + mid);
+	}
+	
+	else if(midElement < search) {
+		
+		for(int i = mid ; i<array.size(); i++) {
+			int temp = (int) array.get(i);
+			
+			if (temp == search) {
+				System.out.println("The search element is found at position " + i);
+				break;
+			}
+			
+		}
+	}
+	else if(midElement > search) {
+		
+		for(int i = 0; i< mid ; i++) {
+			
+			int temp = (int) array.get(i);
+			
+			if (temp == search) {
+				System.out.println("The search element is found at position " + i);
+				break;
+			}
+		}
+	}
+	else {
+		System.out.println("The search element is not found");
+	}
+			}
+    
+  
+}
