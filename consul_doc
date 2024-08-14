@@ -1,0 +1,26 @@
+Consul is a service networking solution that enables teams to manage secure network connectivity between services and across on-prem and multi-cloud environments and runtimes. Consul offers service discovery, service mesh, traffic management, and automated updates to network infrastructure device.
+
+Advantages over Eureka server:
+  1)No need of additional service for service-registery
+  2)No need to configure each and every service to register with service registry
+
+==================================================================================================================
+Set-Up:
+
+1)Download consul at : https://developer.hashicorp.com/consul/downloads
+2)extract after downloading
+3)open command prompt at downloaded path and run the command :
+  C:\Intel\consul_1.16.0_windows_amd64>consul.exe agent -dev
+4)Consul Ui will be running at port 8500(default)
+  http://localhost:8500/ 
+  It will redirect to: http://localhost:8500/ui/dc1/services
+  where you can see all the registered services
+5) <dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-consul-discovery</artifactId>
+   </dependency>
+6)we have to add acctuator along with consul as consul checks the application health at regular intervals
+  <dependency>
+      	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-actuator</artifactId>
+  </dependency>
