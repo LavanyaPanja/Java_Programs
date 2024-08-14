@@ -1,0 +1,32 @@
+package corejava;
+
+public class PrimeNumber {
+	int prime;
+	int count=0;
+	void prime(int prime) {
+		this.prime=prime;
+		if(this.prime>0) {
+			for(int i=2;i<this.prime;i++) {
+				if(this.prime%i==0) {
+					count++;
+					
+				}
+//				else {
+//					
+//				}
+			}
+			if(count==0) {
+				System.out.println("Prime "+this.prime);
+				
+			}
+			else {
+				System.out.println("Not a Prime "+this.prime);
+			}
+		}
+	}
+	public static void main(String[] args) {
+		PrimeNumber primeNumber=new PrimeNumber();
+		primeNumber.prime(41);
+	}
+
+}
