@@ -1,0 +1,106 @@
+Language fundamentals:
+
+
+	
+ Explain java features and what is platform independence in java?
+	
+ Explain datatypes available in java?
+	
+ Explain implicit casting and explicit casting?
+	
+ Explain about an Array?
+	
+ Explain Naming conventions in java?
+	
+ Explain JDK, JRE and JVM?
+	
+ What is the Source file structure in java?
+	
+ What is a .class file?
+	
+ Why main method is public static? Can I pass the arguments to main method?
+	
+ Explain few operators? Ans why we use == operator?
+
+
+OOPS:
+
+
+	
+ Explain OOP and features?
+	
+ Explain about a Class?
+	
+ Explain about an Object?
+	
+ Explain about instance variables?
+	
+ How do you identify local and instance variables and what is the difference between them?
+	
+ Explain about instance methods?
+	
+ Explain about Constructor?
+	
+ What is the difference between constructor and a method?
+	
+ Explain Abstraction?
+	
+ Explain Encapsulation?
+	
+ What is the difference between Abstraction and Encapsulation?
+	
+ Explain Inheritance? Why multiple inheritance is not possible in java?
+	
+ Explain Polymorphism?
+	
+ What is method overloading?
+	
+ What is method overriding?
+	
+ What is the difference between overloading and overriding?
+	
+ Explain dynamic method dispatch?
+	
+ What is the advantage of Super class reference to a sub class object?
+	
+ Explain Object casting?
+	
+ Explain Super key word?
+	
+ How do you prevent a method from being overridden?
+	
+ Explain about abstract key word and abstract class?
+	
+ Explain about Interface?
+	
+ What is a marker interface? Any example?
+	
+ Explain String class & String Buffer?
+	
+ How System.out.println() works?
+	
+ Explain about final key word?
+	
+ Explain about static key word?
+	
+ Can static/final methods be overridden?
+	
+ Explain instanceof operator?
+	
+ Explain Access Modifiers and Non access modifiers in Java?
+	
+ What modifiers are allowed for a class?
+	
+ What Access modifiers allowed for a constructor?
+	
+ Explain about package in java? What is the default package?
+	
+ Explain import in java?
+	
+ Explain toString() method?
+	
+ Explain Auto Boxing and Auto unboxing?
+	
+ What is Co variant return type?
+	
+ What is Variable length argument?
