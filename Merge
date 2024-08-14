@@ -1,0 +1,278 @@
+package corejava;
+
+import java.util.Scanner;
+
+class Node {
+	private int data;
+	private Node left, right;
+	private int lvl;
+	public Node() {
+
+// Tree Node
+
+	}
+
+	public int getData() {
+
+		return data;
+
+	}
+
+	public void setData(int data) {
+
+		this.data = data;
+
+	}
+
+	public int getLvl() {
+
+		return lvl;
+
+	}
+
+	public void setLvl(int lvl) {
+
+		this.lvl = lvl;
+
+	}
+
+	public Node getLeft() {
+
+		return left;
+
+	}
+
+	public void setLeft(Node left) {
+
+		this.left = left;
+
+	}
+
+	public Node getRight() {
+
+		return right;
+
+	}
+
+	public void setRight(Node right) {
+
+		this.right = right;
+
+	}
+
+}
+
+public class Hello {
+
+	public static Node search(int key, Node node) {
+
+		if (node == null)
+
+			return null;
+
+		if (node.getLeft() == null)
+
+			return null;
+
+		if (node.getLeft().getData() == key)
+
+			return node;
+
+		if (node.getRight() == null)
+
+			return null;
+
+		if (node.getRight().getData() == key)
+
+			return node;
+
+		Node result = new Node();
+
+		result = search(key, node.getLeft());
+
+		if (result == null)
+
+			result = search(key, node.getRight());
+
+		return result;
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int n = sc.nextInt();
+
+		int r = sc.nextInt();
+
+		Node root = new Node();
+
+		for (int i = 0; i < r; i++) {
+
+			int p = sc.nextInt();
+
+			int c = sc.nextInt();
+
+			if (root.getData() == 0 || root.getData() == c) {
+
+				root.setData(p);
+
+				root.setLvl(0);
+
+			}
+
+			Node val = root;
+
+			if (root.getData() != p) {
+
+				val = search(p, root);
+
+				if (val.getLeft().getData() == p)
+
+					val = val.getLeft();
+
+				else
+
+					val = val.getRight();
+
+				if (val == null) {
+
+					System.out.println("node not present");
+
+					return;
+
+				}
+
+			}
+
+			Node child = new Node();
+
+			child.setData(c);
+
+			child.setLvl(val.getLvl() + 1);
+
+			if (val.getLeft() == null)
+
+				val.setLeft(child);
+
+			else
+
+				val.setRight(child);
+		}
+
+		int r1 = sc.nextInt();
+
+		int r2 = sc.nextInt();
+
+		Node s1 = root;
+
+		if (root.getData() != r1) {
+
+			s1 = search(r1, root);
+
+			if (s1.getLeft().getData() == r1)
+
+				s1 = s1.getLeft();
+
+			else
+
+				s1 = s1.getRight();
+
+		}
+
+		Node s2 = root;
+
+		if (root.getData() != r2) {
+
+			s2 = search(r2, root);
+
+			if (s2.getLeft().getData() == r2)
+
+				s2 = s2.getLeft();
+
+			else
+
+				s2 = s2.getRight();
+
+		}
+
+		if (s1 == null || s2 == null) {
+
+			System.out.println("NONE");
+
+			return;
+
+		}
+
+		if (s1 == s2) {
+
+			System.out.println("SELF");
+
+			return;
+
+		}
+
+		if (s1.getLvl() > s2.getLvl()) {
+
+			if ((s1.getLvl() - s2.getLvl()) > 1) {
+
+				System.out.println("GRANDPARENT");
+
+			}
+
+			else {
+
+				if (s2.getLeft() == s1 || s2.getRight() == s1)
+
+					System.out.println("PARENT");
+
+				else
+
+					System.out.println("SIBLING OF PARENT");
+
+			}
+
+		}
+
+		else if (s1.getLvl() < s2.getLvl()) {
+
+			if ((s2.getLvl() - s1.getLvl()) > 1) {
+
+				System.out.println("GRANDCHILD");
+
+			}
+
+			else {
+
+				if (s1.getLeft() == s2 || s1.getRight() == s2)
+
+					System.out.println("CHILD");
+
+				else
+
+					System.out.println("CHILD OF SIBLING");
+
+			}
+
+		}
+
+		else {
+
+			Node parent = search(s1.getData(), root);
+
+			if (parent.getLeft() == s2 || parent.getRight() == s2)
+
+				System.out.println("SIBLING");
+
+			else
+
+				System.out.println("COUSIN");
+
+		}
+
+		sc.close();
+
+	}
+
+}
