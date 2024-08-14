@@ -1,0 +1,39 @@
+package corejava;
+
+import java.util.Scanner;
+
+public class Consecutive {
+	
+	public int consecutiveNumber(int input1,int[] input2) {
+		int temp;
+		int c=0;
+		for(int i=0;i<input1;i++) {
+			for(int j=0;j<input1-1;j++) {
+				if(input2[i]<input2[j]) {
+					temp=input2[i];
+					input2[i]=input2[j];
+					input2[j]=temp;
+				}
+			}
+		}
+		for(int i=0;i<input1-1;i++) {
+			if(input2[i]+1!=input2[i+1]) {
+				c++;		
+			}
+		}
+		if(c==0)
+			return 1;
+		else
+			return 0;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int input1=sc.nextInt();
+		int []a=new int[input1];
+		for(int i=0;i<input1;i++)
+			a[i]=sc.nextInt();
+		Consecutive consecutive=new Consecutive();
+		int val=consecutive.consecutiveNumber(input1, a);
+		System.out.println(val);
+	}
+}
